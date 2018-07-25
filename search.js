@@ -15,13 +15,14 @@ function print(message) {
 // while loop declaired
 while ( true ) {
   search = prompt("Search for a product in our store. Type 'list' to show all of the produce and 'quit' to exit");
+  search = search.toLowerCase();
   if (search == 'list') {
   print(inStock.join(', '));
-  } else if( inStock.indexOf(search) > -1) {
-    print ("Yes, we have " + search + " in the store.");
-  }else if (inStock.indexOf(search) < -1) {
-    print (search + " is not in stock.");
   } else if (search === 'quit') {
     break;
-  }
+  } else if( inStock.indexOf(search) > -1) {
+    print ("Yes, we have " + search + " in the store.");
+  } else {
+    print (search + " is not in stock.");
+  } 
 }
